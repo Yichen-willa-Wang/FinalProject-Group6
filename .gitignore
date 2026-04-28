@@ -1,0 +1,25 @@
+# Mac
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Data
+*.csv
+*.xlsx
+*.xls
+data/
+results/
+outputs/
+
+# Model
+*.pt
+*.pth
+*.bin
+*.safetensors
+checkpoint-*/
+finetuned_model/
+
+# R / history
+.Rhistory

@@ -1,0 +1,15 @@
+pandas
+numpy
+torch
+transformers
+datasets
+peft
+scikit-learn
+openpyxl
+tqdm
+matplotlib
+wordcloud
+gensim
+nltk
+spacy
+openai

@@ -1,0 +1,39 @@
+# Core Framework
+langchain==0.1.20
+langchain-community==0.0.38
+langchain-core==0.1.52
+
+# Vector Database
+chromadb==0.4.24
+faiss-cpu==1.8.0
+
+# Document Processing
+pypdf==4.2.0
+pymupdf==1.24.3
+pdf2image==1.17.0
+Pillow==10.3.0
+
+# OCR (skip PaddleOCR for now, use Tesseract instead)
+pytesseract==0.3.10
+
+# Table Extraction
+pdfplumber==0.11.0
+
+# Image Processing
+opencv-python==4.9.0.80
+
+# HuggingFace
+transformers==4.40.0
+sentence-transformers==2.7.0
+huggingface-hub==0.23.0
+
+# Web Interface
+gradio==4.29.0
+
+# Utilities
+numpy==1.26.4
+pandas==2.2.2
+tqdm==4.66.4
+python-dotenv==1.0.1
+pyyaml==6.0.1
+requests==2.31.0

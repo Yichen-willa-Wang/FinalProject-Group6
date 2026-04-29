@@ -1,69 +1,131 @@
 # Code Overview
 
-This repository contains two independent NLP projects, each exploring a different business application.
+This folder contains two independent NLP business application projects.
+
+The first project applies an encoder-based classification model to detect drug shortage-related discussions from Reddit data. The second project applies a decoder-based RAG agent to support medical follow-up question answering.
+
+These two projects are independent and are not implemented as a single encoder–decoder pipeline.
 
 ---
 
 ## Project 1: Encoder Application — Social Media Shortage Detection
 
-This project focuses on detecting drug shortage-related discussions from Reddit data using a transformer-based classification model.
+This project uses a transformer-based text classifier to identify shortage-related discussions from Reddit posts and comments about GLP-1 medications.
 
-### Key Functions
+### Main Functions
 
-- Transform unstructured Reddit text into structured shortage signals
-- Identify shortage-related discussions
-- Support downstream analysis such as:
-  - time-series analysis
-  - topic modeling
-  - medication-level trends
+- Clean and label Reddit text data
+- Train a transformer-based binary classifier
+- Predict shortage-related posts in the full corpus
+- Generate structured shortage signals
+- Support topic modeling and time-series analysis
 
 ### Main Script
 
+```text
 Code/Project1_Encoder_Application/encoder_application/shortage_identification.py
+````
 
+### Project README
 
----
+```text
+Code/Project1_Encoder_Application/README.md
+```
 
-## Project 2: Decoder Application — LLM Agent
+### Dependencies
 
-This project explores a separate business application using LLM-based agents.
-
-It focuses on:
-
-- generating responses or decisions
-- simulating agent behavior
-- interacting with structured or unstructured inputs
-
-⚠️ This project is currently under development.
+```text
+Code/Project1_Encoder_Application/requirements.txt
+```
 
 ---
 
-## Important Note
+## Project 2: Decoder Application — Clinical AI Agent
 
-These two projects are **independent**:
+This project implements a medical Retrieval-Augmented Generation (RAG) agent for ophthalmology and refractive-surgery follow-up assistance.
 
-- Project 1 focuses on encoder-based classification
-- Project 2 focuses on LLM/agent-based generation
+### Main Functions
 
-They are not implemented as a single encoder–decoder pipeline.
+* Process medical documents
+* Build a ChromaDB vector database
+* Retrieve relevant clinical document chunks
+* Generate patient-facing responses using an LLM
+* Evaluate RAG responses against non-RAG responses
+
+### Main Folder
+
+```text
+Code/Project2_Decoder_Application/clinical-ai-agent/
+```
+
+### Main Scripts
+
+```text
+Code/Project2_Decoder_Application/clinical-ai-agent/scripts/build_vectordb.py
+Code/Project2_Decoder_Application/clinical-ai-agent/test_scripts/quick_test_rag.py
+Code/Project2_Decoder_Application/clinical-ai-agent/test_scripts/evaluate_rag_final.py
+Code/Project2_Decoder_Application/clinical-ai-agent/scripts/run_app.py
+```
+
+### Project README
+
+```text
+Code/Project2_Decoder_Application/README.md
+```
 
 ---
 
 ## How to Run
 
-### Step 1: Install dependencies
-pip install -r Code/requirements.txt
-### Step 2: Run Encoder Project
-python Code/Project1_Encoder_Application/encoder_application/shortage_identification.py
+### Project 1
 
+Install dependencies:
+
+```bash
+pip install -r Code/Project1_Encoder_Application/requirements.txt
+```
+
+Run the encoder application:
+
+```bash
+python Code/Project1_Encoder_Application/encoder_application/shortage_identification.py
+```
+
+### Project 2
+
+Install dependencies:
+
+```bash
+pip install -r Code/Project2_Decoder_Application/clinical-ai-agent/requirements.txt
+```
+
+Run a quick RAG test:
+
+```bash
+python Code/Project2_Decoder_Application/clinical-ai-agent/test_scripts/quick_test_rag.py
+```
+
+Run the RAG evaluation:
+
+```bash
+python Code/Project2_Decoder_Application/clinical-ai-agent/test_scripts/evaluate_rag_final.py
+```
+
+Launch the Gradio interface:
+
+```bash
+python Code/Project2_Decoder_Application/clinical-ai-agent/scripts/run_app.py
+```
 
 ---
 
-## Data and Model
+## Data and Model Notes
 
-- Large datasets are not included due to limitations
-- Trained models are stored externally (see project README)
+Large datasets, trained model checkpoints, and vector databases are not included in this repository due to size limitations.
+
+Project-specific data and model details are documented in each project README.
 
 ---
 
 ## End
+

@@ -1,0 +1,52 @@
+# Clinical AI Agent Configuration
+
+# Path Configuration
+paths:
+  data_dir: /home/ubuntu/data
+  model_dir: /root/models
+  pdf_dir: /home/ubuntu/data/raw/medical_pdfs_split
+  vector_db_dir: /home/ubuntu/data/vector_db
+  log_dir: /root/clinical-ai-agent/logs
+
+# Model Configuration
+models:
+  # Embedding model for vector database
+  embedding:
+    name: BAAI/bge-base-zh-v1.5
+    device: cpu
+  
+  # LLM for generation (via HuggingFace API)
+  llm:
+    name: Qwen/Qwen2.5-7B-Instruct
+    max_tokens: 512
+    temperature: 0.7
+
+# Vector Database Configuration
+vector_db:
+  type: chroma  # Options: chroma, faiss
+  persist_directory: /home/ubuntu/data/vector_db
+
+# RAG Configuration
+rag:
+  # Chunking parameters
+  chunk_size: 800
+  chunk_overlap: 100
+  use_semantic_chunking: true
+  
+  # Retrieval parameters
+  top_k: 5
+  similarity_threshold: 0.5
+  
+  # Reranking (future feature)
+  use_reranking: false
+
+# Web Interface Configuration
+web:
+  host: 0.0.0.0
+  port: 7860
+  share: false
+  
+# Logging Configuration
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
